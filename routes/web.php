@@ -13,5 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\PartnerisController@index');
-Route::get('/Partneriai', 'App\Http\Controllers\PartnerisController@getPartneriai')->name('partneris');
+Route::get('/', 'App\Http\Controllers\HomeController@index');
+
+Route::get('/Partneriai', 'App\Http\Controllers\PartnerisController@index')->name('partneris');
+Route::get('/Zaidejai', 'App\Http\Controllers\ZaidejasController@index')->name('zaidejas');
+Route::get('/Komandos', 'App\Http\Controllers\KomandaController@index')->name('komanda');
+Route::get('/Savininkai', 'App\Http\Controllers\SavininkasController@index')->name('savininkas');
+Route::get('/Treneriai', 'App\Http\Controllers\TrenerisController@index')->name('treneris');

@@ -31,25 +31,25 @@
             <h3 id="slogan">VISIŠKAI ORIGINALI E-SPORT SVETAINĖ</h3>
         </div>
         <div id="img">
-            <img src="images/esport.png" alt="aaaaa" width="100" height="80" style="margin-left: 350px">
+            <img src="images/esport.png" alt="esport-logo" width="100" height="80" style="margin-left: 350px">
         </div>
 
     </div>
     <div id="content">
         <div id="topMenu">
             <ul>
-                <li><a href="index.html" title="Pagrindinis puslapis" class="active">Pagrindinis puslapis</a></li>
+                <li><a href="{{url('/')}}" title="Pagrindinis puslapis" class="active">Pagrindinis puslapis</a></li>
 
             </ul>
         </div>
         <div id="contentLeft">
             <h2>Informacija</h2>
             <ul>
-                <li><a href="partneriai.html">Partneriai</a></li>
-                <li><a href="zaidejai.html">Žaidėjai</a></li>
-                <li><a href="komandos.html">Komandos</a></li>
-                <li><a href="savininkai.html">Savininkai</a></li>
-                <li><a href="treneriai.html">Treneriai</a></li>
+                <li><a href="{{url('/Partneriai')}}">Partneriai</a></li>
+                <li><a href="{{url('/Zaidejai')}}">Žaidėjai</a></li>
+                <li><a href="{{url('/Komandos')}}">Komandos</a></li>
+                <li><a href="{{url('/Savininkai')}}">Savininkai</a></li>
+                <li><a href="{{url('/Treneriai')}}">Treneriai</a></li>
             </ul>
         </div>
         <div id="contentRight">
