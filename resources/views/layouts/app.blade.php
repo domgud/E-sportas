@@ -9,7 +9,7 @@
     <title>{{ config('app.name', 'Visiškai originali esport svetainė :)') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/custom.css')}}" media="screen"/>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript">

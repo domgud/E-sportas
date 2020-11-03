@@ -1,4 +1,19 @@
 @CHARSET "UTF-8";
+table, td{
+    color: #1a202c;
+    border: 1px solid black;
+}
+
+table tr:nth-child(even){
+    background-color: #dad9d4;
+}
+table tr:nth-child(odd){
+    background-color: white;
+}
+
+table tr:hover{
+    background-color: azure;
+}
 
 ul, li {
     margin: 0px;
@@ -152,3 +167,5 @@ h2#pageTitle {
     background-color: #6E6E6E;
     color: #fff;
 }
+
+

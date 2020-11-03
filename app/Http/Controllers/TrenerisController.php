@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Treneris;
 use Illuminate\Http\Request;
 
 class TrenerisController extends Controller
 {
     public function index()
     {
-        return view('treneris');
+        $allTreneriai = Treneris::all();
+        return view ('treneris', compact('allTreneriai'));
     }
 }
