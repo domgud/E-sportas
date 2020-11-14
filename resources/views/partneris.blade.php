@@ -22,24 +22,23 @@
         </thead>
 
         <tbody>
-
-        @foreach($allPartneriai as $data )
+        @foreach($partners as $data )
 
             <tr>
                 <td>
-                    {{$data->pavadinimas}}
+                    {{$data->name}}
                 </td>
                 <td>
-                    {{$data->svetaine}}
+                    {{$data->website}}
                 </td>
                 <td>
-                    {{$data->ikurimo_metai}}
+                    {{$data->year}}
                 </td>
                 <td>
-                    {{$data->valstybe}}
+                    {{$data->country}}
                 </td>
                 <td>
-                    {{$data->pagrindine_rinka}}
+                    {{$data->items}}
                 </td>
 
             </tr>

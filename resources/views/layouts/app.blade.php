@@ -45,11 +45,11 @@
         <div id="contentLeft">
             <h2>Informacija</h2>
             <ul>
-                <li><a href="{{url('/Partneriai')}}">Partneriai</a></li>
-                <li><a href="{{url('/Zaidejai')}}">Žaidėjai</a></li>
-                <li><a href="{{url('/Komandos')}}">Komandos</a></li>
-                <li><a href="{{url('/Savininkai')}}">Savininkai</a></li>
-                <li><a href="{{url('/Treneriai')}}">Treneriai</a></li>
+                <li><a href="{{route('partners.index')}}">Partneriai</a></li>
+                <li><a href="{{route('players.index')}}">Žaidėjai</a></li>
+                <li><a href="{{route('teams.index')}}">Komandos</a></li>
+                <li><a href="{{route('owners.index')}}">Savininkai</a></li>
+                <li><a href="{{route('trainers.index')}}">Treneriai</a></li>
             </ul>
         </div>
         <div id="contentRight">

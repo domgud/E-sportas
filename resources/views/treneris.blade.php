@@ -15,14 +15,14 @@
 
         <tbody>
 
-        @foreach($allTreneriai as $data )
+        @foreach($trainers as $data )
 
             <tr>
                 <td>
-                    {{$data->vardas}}
+                    {{$data->name}}
                 </td>
                 <td>
-                    {{$data->pavarde}}
+                    {{$data->lastname}}
                 </td>
 
             </tr>

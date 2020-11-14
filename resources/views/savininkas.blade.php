@@ -15,14 +15,14 @@
 
         <tbody>
 
-        @foreach($allSavininkai as $data )
+        @foreach($owners as $data )
 
             <tr>
                 <td>
-                    {{$data->vardas}}
+                    {{$data->name}}
                 </td>
                 <td>
-                    {{$data->pavarde}}
+                    {{$data->lastname}}
                 </td>
 
             </tr>

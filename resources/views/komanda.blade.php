@@ -15,14 +15,14 @@
 
         <tbody>
 
-        @foreach($allKomandos as $data )
+        @foreach($teams as $data )
 
             <tr>
                 <td>
-                    {{$data->pavadinimas}}
+                    {{$data->name}}
                 </td>
                 <td>
-                    {{$data->valstybe}}
+                    {{$data->country}}
                 </td>
 
             </tr>
