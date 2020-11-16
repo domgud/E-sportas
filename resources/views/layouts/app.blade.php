@@ -71,6 +71,7 @@
 </div>
 
 <footer class="container-fluid text-center">
+    Pirmo prisijungimo laikas: {{session('entryTime')}} :^)
 </footer>
 
 </body>
