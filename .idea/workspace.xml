@@ -21,24 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="3eed98fd-862b-4309-adb4-b33278580370" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KomandaController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PartnerisController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SavininkasController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrenerisController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ZaidejasController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Komanda.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Partneris.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Savininkas.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Treneris.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Zaidejas.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/komanda.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/komanda.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/partneris.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partneris.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/savininkas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/savininkas.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/treneris.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/treneris.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/zaidejas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/zaidejas.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,6 +195,10 @@
       <workItem from="1604347910073" duration="3122000" />
       <workItem from="1604396550413" duration="1730000" />
       <workItem from="1605374367677" duration="3285000" />
+      <workItem from="1605384876866" duration="2155000" />
+      <workItem from="1605387175329" duration="234000" />
+      <workItem from="1605387774565" duration="137000" />
+      <workItem from="1605555153731" duration="381000" />
     </task>
     <servers />
   </component>

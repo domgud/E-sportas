@@ -1,33 +1,37 @@
 @extends('layouts.app')
 @section('content')
-    <table width="100%">
-        <thead>
-        <tr style="background-color: yellow">
-            <th>
-                Vardas
-            </th>
-            <th>
-                Pavarde
-            </th>
 
-        </tr>
-        </thead>
+    <div class="card-body">
 
-        <tbody>
-
-        @foreach($players as $data )
-
+        <table class="table">
+            <thead>
             <tr>
-                <td>
-                    {{$data->name}}
-                </td>
-                <td>
-                    {{$data->lastname}}
-                </td>
-
+                <th scope="col">#</th>
+                <th scope="col">Vardas</th>
+                <th scope="col">Pavardė</th>
+                <th scope="col">Pozicija</th>
+                <th scope="col">Slapyvardas</th>
+                <th scope="col">Pilietybė</th>
+                <th scope="col">Prisijungė</th>
             </tr>
-        @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            @foreach($players as $data)
+                <tr>
+                    <th scope="row">{{$data->id}}</th>
+                    <td>{{$data->name}}</td>
+                    <td>{{$data->lastname}}</td>
+                    <td>{{$data->position}}</td>
+                    <td>{{$data->nick}}</td>
+                    <td>{{$data->nationality}}</td>
+                    <td>{{$data->joined}}</td>
+                </tr>
+            @endforeach
+
+            </tbody>
+        </table>
+        {{ $players->links() }}
+    </div>
+    </div>
 @endsection
 

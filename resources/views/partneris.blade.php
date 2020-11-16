@@ -1,49 +1,47 @@
 @extends('layouts.app')
 @section('content')
-    <table width="100%">
-        <thead>
-        <tr style="background-color: yellow">
-            <th>
-                Pavadinimas
-            </th>
-            <th>
-                Svetaine
-            </th>
-            <th>
-                Ikurimo metai
-            </th>
-            <th>
-                Valstybe
-            </th>
-            <th>
-                Pagrindine rinka
-            </th>
-        </tr>
-        </thead>
 
-        <tbody>
-        @foreach($partners as $data )
+    <div class="card-body">
 
+        <table class="table">
+            <thead>
             <tr>
-                <td>
-                    {{$data->name}}
-                </td>
-                <td>
-                    {{$data->website}}
-                </td>
-                <td>
-                    {{$data->year}}
-                </td>
-                <td>
-                    {{$data->country}}
-                </td>
-                <td>
-                    {{$data->items}}
-                </td>
+                <th scope="col">Pavadinimas</th>
+                <th scope="col">Svetainė</th>
+                <th scope="col">Metai</th>
+                <th scope="col">Valstybė</th>
+                <th scope="col">Rinka</th>
 
             </tr>
-        @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            @foreach($partners as $data)
+                <tr>
+                <tr>
+                    <td>
+                        {{$data->name}}
+                    </td>
+                    <td>
+                        {{$data->website}}
+                    </td>
+                    <td>
+                        {{$data->year}}
+                    </td>
+                    <td>
+                        {{$data->country}}
+                    </td>
+                    <td>
+                        {{$data->items}}
+                    </td>
+
+                </tr>
+
+                </tr>
+            @endforeach
+
+            </tbody>
+        </table>
+    </div>
+    </div>
 @endsection
 
