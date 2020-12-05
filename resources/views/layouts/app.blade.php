@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Better title</title>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
@@ -24,7 +32,7 @@
 
         /* Set black background color, white text and some padding */
         footer {
-            background-color: #555;
+            background-color: black;
             color: white;
             padding: 15px;
         }
@@ -42,7 +50,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Logo</a>
+            <p class="navbar-brand" href="#">Meniu</p>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -56,11 +64,19 @@
     </div>
 </nav>
 
-<main class="py-4">
-    <div class="container">
-        @yield('content')
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+
+        </div>
+        <div class="col-sm-10 text-center" style="margin-top: 10px">
+            @yield('content')
+        </div>
+        <div class="col-sm-2 sidenav">
+
+        </div>
     </div>
-</main>
+</div>
 
 <footer class="container-fluid text-center">
     Pirmo prisijungimo laikas: {{session('entryTime')}} :^)

@@ -9,7 +9,7 @@
                 <th scope="col">Vardas</th>
                 <th scope="col">Pavardė</th>
                 <th scope="col">Amžius</th>
-                <th scope="col">Veiksmai</th>
+                <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
