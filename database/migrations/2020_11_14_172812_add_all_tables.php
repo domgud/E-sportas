@@ -54,7 +54,7 @@ class AddAllTables extends Migration
             $table->string('position');
             $table->string('nick');
             $table->string('nationality');
-            $table->dateTime('joined');
+            $table->date('joined');
             $table->bigInteger('team_id')->unsigned();
         });
 

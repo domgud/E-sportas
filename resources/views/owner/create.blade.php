@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">
-                            Atnaujinti
+                            Pridėti
                         </button>
                         <a href="{{route('owners.index')}}"> <button type="button" class="btn btn-warning float-left">Atgal</button> </a>
                     </form>

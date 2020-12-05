@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Player;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class PlayerController extends Controller
@@ -25,7 +26,8 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        //
+        $teams = Team::all();
+        return view ('player.create')->with('teams', $teams);
     }
 
     /**
@@ -36,7 +38,17 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Player::create([
+
+            'name' => $request->name,
+            'lastname' => $request->lastname,
+            'position' => $request->position,
+            'nick' => $request->nick,
+            'nationality' => $request->nationality,
+            'joined' => $request->joined,
+            'team_id' => $request->team,
+        ]);
+        return redirect(route('players.index'));
     }
 
     /**
@@ -58,7 +70,8 @@ class PlayerController extends Controller
      */
     public function edit(Player $player)
     {
-        //
+        $teams = Team::all();
+        return view('player.edit')->with(['teams' => $teams, 'player' => $player]);
     }
 
     /**
@@ -70,7 +83,15 @@ class PlayerController extends Controller
      */
     public function update(Request $request, Player $player)
     {
-        //
+        $player-> name = $request->name;
+        $player-> lastname = $request->lastname;
+        $player-> position = $request->position;
+        $player-> nick = $request->nick;
+        $player-> joined = $request->joined;
+        $player-> nationality = $request->nationality;
+        $player-> team_id = $request->team;
+        $player->save();
+        return redirect(route('players.index'));
     }
 
     /**
@@ -81,6 +102,7 @@ class PlayerController extends Controller
      */
     public function destroy(Player $player)
     {
-        //
+        $player->delete();
+        return redirect(route('players.index'));
     }
 }

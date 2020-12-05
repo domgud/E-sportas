@@ -66,15 +66,11 @@
 
 <div class="container-fluid text-center">
     <div class="row content">
-        <div class="col-sm-2 sidenav">
 
-        </div>
         <div class="col-sm-10 text-center" style="margin-top: 10px">
             @yield('content')
         </div>
-        <div class="col-sm-2 sidenav">
 
-        </div>
     </div>
 </div>
 
