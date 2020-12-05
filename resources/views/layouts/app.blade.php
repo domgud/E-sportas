@@ -56,19 +56,11 @@
     </div>
 </nav>
 
-<div class="container-fluid text-center">
-    <div class="row content">
-        <div class="col-sm-2 sidenav">
-
-        </div>
-        <div class="col-sm-8 text-left">
-            @yield('content')
-        </div>
-        <div class="col-sm-2 sidenav">
-
-        </div>
+<main class="py-4">
+    <div class="container">
+        @yield('content')
     </div>
-</div>
+</main>
 
 <footer class="container-fluid text-center">
     Pirmo prisijungimo laikas: {{session('entryTime')}} :^)
