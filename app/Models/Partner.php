@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Partner extends Model
 {
     use HasFactory;
-    public $timestamps = 'false';
+    public $timestamps = false;
+    protected $fillable = ['name', 'year', 'country', 'items', 'website'];
     public function teams()
     {
         return $this->belongsToMany(Team::class);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Partner;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class PartnerController extends Controller
@@ -25,7 +26,8 @@ class PartnerController extends Controller
      */
     public function create()
     {
-        //
+        $teams = Team::all();
+        return view ('partner.create')->with('teams', $teams);
     }
 
     /**
@@ -36,7 +38,15 @@ class PartnerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $partner = Partner::create([
+            'name' => $request->name,
+            'country' => $request->items,
+            'items' => $request->items,
+            'website' => $request->website,
+            'year' => $request->year,
+        ]);
+        $partner->teams()->sync($request->teams);
+        return redirect(route('partners.index'));
     }
 
     /**
@@ -58,7 +68,11 @@ class PartnerController extends Controller
      */
     public function edit(Partner $partner)
     {
-        //
+        $teams = Team::all();
+        return view ('partner.edit')->with([
+            'partner' => $partner,
+            'teams' => $teams
+        ]);
     }
 
     /**
@@ -70,7 +84,14 @@ class PartnerController extends Controller
      */
     public function update(Request $request, Partner $partner)
     {
-        //
+        $partner->teams()->sync($request->teams);
+        $partner->name = $request->name;
+        $partner->year = $request->year;
+        $partner->country = $request->country;
+        $partner->items = $request->items;
+        $partner->website = $request->website;
+        $partner->save();
+        return redirect(route('partners.index'));
     }
 
     /**
@@ -81,6 +102,9 @@ class PartnerController extends Controller
      */
     public function destroy(Partner $partner)
     {
-        //
+        $partner->teams()->detach();
+        $partner->delete();
+        return redirect(route('partners.index'));
+
     }
 }
