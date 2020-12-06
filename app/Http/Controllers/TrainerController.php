@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Team;
 use App\Models\Trainer;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class TrainerController extends Controller
      */
     public function create()
     {
-        //
+        $teams = Team::all();
+        return view ('trainer.create')->with('teams', $teams);
     }
 
     /**
@@ -36,7 +38,15 @@ class TrainerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Trainer::create([
+
+            'name' => $request->name,
+            'lastname' => $request->lastname,
+            'nationality' => $request->nationality,
+            'age' => $request->age,
+            'team_id' => $request->team,
+        ]);
+        return redirect(route('trainers.index'));
     }
 
     /**
@@ -58,7 +68,8 @@ class TrainerController extends Controller
      */
     public function edit(Trainer $trainer)
     {
-        //
+        $teams = Team::all();
+        return view('trainer.edit')->with(['teams' => $teams, 'trainer' => $trainer]);
     }
 
     /**
@@ -70,7 +81,13 @@ class TrainerController extends Controller
      */
     public function update(Request $request, Trainer $trainer)
     {
-        //
+        $trainer-> name = $request->name;
+        $trainer-> lastname = $request->lastname;
+        $trainer-> age = $request->age;
+        $trainer-> nationality = $request->nationality;
+        $trainer-> team_id = $request->team;
+        $trainer->save();
+        return redirect(route('trainers.index'));
     }
 
     /**
@@ -81,6 +98,7 @@ class TrainerController extends Controller
      */
     public function destroy(Trainer $trainer)
     {
-        //
+        $trainer->delete();
+        return redirect(route('trainers.index'));
     }
 }
