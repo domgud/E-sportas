@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Owner;
+use App\Models\Partner;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -25,7 +27,12 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        $partners = Partner::all();
+        $owners = Owner::all();
+        return view('team.create')->with([
+           'partners' => $partners,
+           'owners' => $owners
+        ]);
     }
 
     /**
@@ -36,7 +43,14 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $team = Team::create([
+            'name' => $request->name,
+            'country' => $request->country,
+            'year' => $request->year,
+            'owner_id' => $request->owner
+        ]);
+        $team->partners()->sync($request->partners);
+        return redirect(route('teams.index'));
     }
 
     /**
@@ -58,7 +72,13 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        //
+        $partners = Partner::all();
+        $owners = Owner::all();
+        return view('team.edit')->with([
+            'partners' => $partners,
+            'owners' => $owners,
+            'team' => $team
+        ]);
     }
 
     /**
@@ -70,7 +90,13 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
-        //
+        $team->partners()->sync($request->partners);
+        $team->name = $request->name;
+        $team->year = $request->year;
+        $team->country = $request->country;
+        $team->owner_id = $request->owner;
+        $team->save();
+        return redirect(route('teams.index'));
     }
 
     /**
@@ -81,6 +107,8 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        //
+        $team->partners()->detach();
+        $team->delete();
+        return redirect(route('teams.index'));
     }
 }
