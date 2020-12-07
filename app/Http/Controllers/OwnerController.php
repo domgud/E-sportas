@@ -36,6 +36,11 @@ class OwnerController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'lastname' => 'required|string',
+            'age' => 'required|max:100|min:15|numeric'
+        ]);
         Owner::create([
             'name' => $request->name,
             'lastname' => $request->lastname,
@@ -75,6 +80,11 @@ class OwnerController extends Controller
      */
     public function update(Request $request, Owner $owner)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'lastname' => 'required|string',
+            'age' => 'required|max:100|min:15|numeric'
+        ]);
         $owner->name= $request->name;
         $owner->lastname = $request->lastname;
         $owner->age = $request->age;

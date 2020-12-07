@@ -6,6 +6,15 @@
             <div class="card">
 
                 <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{route('trainers.update', $trainer)}}" method="POST">
                         @csrf
                         {{method_field('PUT')}}
@@ -14,7 +23,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="name" type="text" class="form-control" name="name" value="{{$trainer->name}}" required>
+                                <input id="name" type="text" class="form-control" name="name" value="{{$trainer->name}}">
 
                             </div>
                         </div>
@@ -23,7 +32,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="lastname" type="text" class="form-control" name="lastname" value="{{$trainer->lastname}}" required>
+                                <input id="lastname" type="text" class="form-control" name="lastname" value="{{$trainer->lastname}}">
 
                             </div>
                         </div>
@@ -33,7 +42,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="age" type="number" class="form-control" name="age" value="{{$trainer->age}}" required>
+                                <input id="age" type="number" class="form-control" name="age" value="{{$trainer->age}}">
 
                             </div>
                         </div>
@@ -42,7 +51,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="nationality" type="text" class="form-control" name="nationality" value="{{$trainer->nationality}}" required>
+                                <input id="nationality" type="text" class="form-control" name="nationality" value="{{$trainer->nationality}}">
 
                             </div>
                         </div>

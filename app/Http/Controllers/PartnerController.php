@@ -38,6 +38,13 @@ class PartnerController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'country' => 'required|string',
+            'items' => 'required|string',
+            'website' => 'required|string',
+            'year' => 'required|max:2020|min:1800|numeric'
+        ]);
         $partner = Partner::create([
             'name' => $request->name,
             'country' => $request->items,
@@ -68,6 +75,7 @@ class PartnerController extends Controller
      */
     public function edit(Partner $partner)
     {
+
         $teams = Team::all();
         return view ('partner.edit')->with([
             'partner' => $partner,
@@ -84,6 +92,13 @@ class PartnerController extends Controller
      */
     public function update(Request $request, Partner $partner)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'country' => 'required|string',
+            'items' => 'required|string',
+            'website' => 'required|string',
+            'year' => 'required|max:2020|min:1800|numeric'
+        ]);
         $partner->teams()->sync($request->teams);
         $partner->name = $request->name;
         $partner->year = $request->year;

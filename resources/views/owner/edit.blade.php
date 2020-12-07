@@ -6,6 +6,15 @@
                 <div class="card">
 
                     <div class="card-body">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <form action="{{route('owners.update', $owner)}}" method="POST">
                         @csrf
                         {{method_field('PUT')}}
@@ -14,7 +23,7 @@
 
                                 <div class="col-md-6">
 
-                                    <input id="name" type="text" class="form-control" name="name" value="{{ $owner->name }}" required>
+                                    <input id="name" type="text" class="form-control" name="name" value="{{ $owner->name }}">
 
                                 </div>
                             </div>
@@ -23,7 +32,7 @@
 
                                 <div class="col-md-6">
 
-                                    <input id="lastname" type="text" class="form-control" name="lastname" value="{{ $owner->lastname }}" required>
+                                    <input id="lastname" type="text" class="form-control" name="lastname" value="{{ $owner->lastname }}">
 
                                 </div>
                             </div>
@@ -33,7 +42,7 @@
 
                                 <div class="col-md-6">
 
-                                    <input id="age" type="number" class="form-control" name="age" value="{{ $owner->age }}" required>
+                                    <input id="age" type="number" class="form-control" name="age" value="{{ $owner->age }}">
 
                                 </div>
                             </div>

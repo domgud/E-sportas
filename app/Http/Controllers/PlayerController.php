@@ -38,6 +38,14 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'lastname' => 'required|string',
+            'position' => 'required|string',
+            'nick' => 'required|string',
+            'nationality' => 'required|string',
+            'joined' => 'required|date',
+        ]);
         Player::create([
 
             'name' => $request->name,
@@ -83,6 +91,14 @@ class PlayerController extends Controller
      */
     public function update(Request $request, Player $player)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'lastname' => 'required|string',
+            'position' => 'required|string',
+            'nick' => 'required|string',
+            'nationality' => 'required|string',
+            'joined' => 'required|date',
+        ]);
         $player-> name = $request->name;
         $player-> lastname = $request->lastname;
         $player-> position = $request->position;

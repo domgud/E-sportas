@@ -6,6 +6,15 @@
             <div class="card">
 
                 <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{route('players.update', $player)}}" method="POST">
                         @csrf
                         {{method_field('PUT')}}
@@ -14,7 +23,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="name" type="text" class="form-control" name="name" value="{{ $player->name }}" required>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ $player->name }}">
 
                             </div>
                         </div>
@@ -23,7 +32,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="lastname" type="text" class="form-control" name="lastname" value="{{ $player->lastname }}" required>
+                                <input id="lastname" type="text" class="form-control" name="lastname" value="{{ $player->lastname }}">
 
                             </div>
                         </div>
@@ -33,7 +42,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="position" type="text" class="form-control" name="position" value="{{ $player->position }}" required>
+                                <input id="position" type="text" class="form-control" name="position" value="{{ $player->position }}">
 
                             </div>
                         </div>
@@ -42,7 +51,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="nick" type="text" class="form-control" name="nick" value="{{ $player->nick }}" required>
+                                <input id="nick" type="text" class="form-control" name="nick" value="{{ $player->nick }}">
 
                             </div>
                         </div>
@@ -51,7 +60,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="nationality" type="text" class="form-control" name="nationality" value="{{ $player->nationality }}" required>
+                                <input id="nationality" type="text" class="form-control" name="nationality" value="{{ $player->nationality }}">
 
                             </div>
                         </div>
@@ -60,7 +69,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="joined" type="date" class="form-control" name="joined" value="{{ $player->joined }}" required>
+                                <input id="joined" type="date" class="form-control" name="joined" value="{{ $player->joined }}">
 
                             </div>
                         </div>

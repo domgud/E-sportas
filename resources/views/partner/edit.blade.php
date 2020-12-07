@@ -6,6 +6,15 @@
             <div class="card">
 
                 <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{route('partners.update', $partner)}}" method="POST">
                         @csrf
                         {{method_field('PUT')}}
@@ -14,7 +23,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="name" type="text" class="form-control" name="name" value="{{ $partner->name }}" required>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ $partner->name }}">
 
                             </div>
                         </div>
@@ -24,7 +33,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="country" type="text" class="form-control" name="country" value="{{ $partner->country }}" required>
+                                <input id="country" type="text" class="form-control" name="country" value="{{ $partner->country }}">
 
                             </div>
                         </div>
@@ -34,7 +43,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="items" type="text" class="form-control" name="items" value="{{ $partner->items }}" required>
+                                <input id="items" type="text" class="form-control" name="items" value="{{ $partner->items }}">
 
                             </div>
                         </div>
@@ -44,7 +53,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="website" type="text" class="form-control" name="website" value="{{ $partner->website }}" required>
+                                <input id="website" type="text" class="form-control" name="website" value="{{ $partner->website }}">
 
                             </div>
                         </div>
@@ -54,7 +63,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="year" type="number" class="form-control" name="year" value="{{ $partner->year }}" required>
+                                <input id="year" type="number" class="form-control" name="year" value="{{ $partner->year }}">
 
                             </div>
                         </div>

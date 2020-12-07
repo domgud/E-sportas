@@ -6,6 +6,15 @@
             <div class="card">
 
                 <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{route('teams.update', $team)}}" method="POST">
                         @csrf
                         {{method_field('PUT')}}
@@ -14,7 +23,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="name" type="text" class="form-control" name="name" value="{{ $team->name }}" required>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ $team->name }}">
 
                             </div>
                         </div>
@@ -24,7 +33,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="country" type="text" class="form-control" name="country" value="{{ $team->country }}" required>
+                                <input id="country" type="text" class="form-control" name="country" value="{{ $team->country }}">
 
                             </div>
                         </div>
@@ -34,7 +43,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="year" type="number" class="form-control" name="year" value="{{ $team->year }}" required>
+                                <input id="year" type="number" class="form-control" name="year" value="{{ $team->year }}">
 
                             </div>
                         </div>

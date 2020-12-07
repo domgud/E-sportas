@@ -38,6 +38,12 @@ class TrainerController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'lastname' => 'required|string',
+            'nationality' => 'required|string',
+            'age' => 'required|max:100|min:15|numeric'
+        ]);
         Trainer::create([
 
             'name' => $request->name,
@@ -81,6 +87,12 @@ class TrainerController extends Controller
      */
     public function update(Request $request, Trainer $trainer)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'lastname' => 'required|string',
+            'nationality' => 'required|string',
+            'age' => 'required|max:100|min:15|numeric'
+        ]);
         $trainer-> name = $request->name;
         $trainer-> lastname = $request->lastname;
         $trainer-> age = $request->age;

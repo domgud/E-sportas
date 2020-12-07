@@ -6,6 +6,15 @@
             <div class="card">
 
                 <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{route('teams.store')}}" method="POST">
                         @csrf
                         <div class="form-group row">
@@ -13,7 +22,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
 
                             </div>
                         </div>
@@ -23,7 +32,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country') }}" required>
+                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country') }}">
 
                             </div>
                         </div>
@@ -33,7 +42,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="year" type="number" class="form-control" name="year" value="{{ old('year') }}" required>
+                                <input id="year" type="number" class="form-control" name="year" value="{{ old('year') }}">
 
                             </div>
                         </div>

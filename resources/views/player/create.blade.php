@@ -6,6 +6,15 @@
             <div class="card">
 
                 <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{route('players.store')}}" method="POST">
                         @csrf
                         <div class="form-group row">
@@ -13,7 +22,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
 
                             </div>
                         </div>
@@ -22,7 +31,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}" required>
+                                <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}">
 
                             </div>
                         </div>
@@ -32,7 +41,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="position" type="text" class="form-control" name="position" value="{{ old('position') }}" required>
+                                <input id="position" type="text" class="form-control" name="position" value="{{ old('position') }}">
 
                             </div>
                         </div>
@@ -40,8 +49,8 @@
                             <label for="nick" class="col-md-2 col-form-label text-md-right">Slapyvardis</label>
 
                             <div class="col-md-6">
+                                <input id="nick" type="text" class="form-control" name="nick" value="{{ old('nick') }}">
 
-                                <input id="nick" type="text" class="form-control" name="nick" value="{{ old('nick') }}" required>
 
                             </div>
                         </div>
@@ -50,7 +59,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="nationality" type="text" class="form-control" name="nationality" value="{{ old('nationality') }}" required>
+                                <input id="nationality" type="text" class="form-control" name="nationality" value="{{ old('nationality') }}">
 
                             </div>
                         </div>
@@ -59,7 +68,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="joined" type="date" class="form-control" name="joined" value="{{ old('joined') }}" required>
+                                <input id="joined" type="date" class="form-control" name="joined" value="{{ old('joined') }}">
 
                             </div>
                         </div>

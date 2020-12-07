@@ -43,6 +43,11 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'country' => 'required|string',
+            'year' => 'required|max:2020|min:1800|numeric'
+        ]);
         $team = Team::create([
             'name' => $request->name,
             'country' => $request->country,
@@ -90,6 +95,11 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'country' => 'required|string',
+            'year' => 'required|max:2020|min:1800|numeric'
+        ]);
         $team->partners()->sync($request->partners);
         $team->name = $request->name;
         $team->year = $request->year;
